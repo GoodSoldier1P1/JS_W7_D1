@@ -7,33 +7,33 @@ let dog_string = "Hello Max, my name is Dog, and I have purple eyes!"
 let dog_names = ["Max","HAS","PuRple","dog"]
 
 function findWords(astring, names){
-    for (let i=0; i<names.length; i++){
-        if (astring.toLowerCase().includes(names[i].toLowerCase())){
-            console.log(`Matched: ${names[i]}`);
+    for (let i=0; i<names.length; i++){ // while i is < the length of names, increment
+        if (astring.toLowerCase().includes(names[i].toLowerCase())){ // convert to lowercase and check if astring includes the lowered index of names
+            console.log(`Matched: ${names[i]}`);  // if it does, match it and console log it
         } else {
-            console.log("No Match");
+            console.log("No Match"); // if it doesn't, tell us it doesn't
         }
     }
 }
 
 //Call method here with parameters
-console.log(findWords(dog_string, dog_names))
+console.log(findWords(dog_string, dog_names)) // call it and pass in the given parameters
 
 //============Exercise #2 ============//
 /*Write a function that takes in an array and removes every even index with a splice,
 and replaces it with the string "even index" */
 
-let given_arr = ["Max","Baseball","Reboot","Goku","Trucks","Rodger"]
+let given_arr = ["Max","Baseball","Reboot","Goku","Trucks","Rodger"] // converted Given arr = [...] to let given_arr = [...] so that it can be used. Hindsight, could of used const
 
 function replaceEvens(arr){
-    for (let i=0; i<arr.length; i+=2){
-        arr.splice(i, 1, "even index")
+    for (let i=0; i<arr.length; i+=2){ // while the length of arr is > i, increment by two
+        arr.splice(i, 1, "even index") // start splicing at i, with 1 ele effected, what we are replacing i with
     }
 }
 
 
 
-replaceEvens(given_arr); // Apply the function
+replaceEvens(given_arr); // Apply the function, logged an undefined when inside the console.log(...)
 console.log(given_arr); // print the function
 //Expected output
 //Given arr == ["Max","Baseball","Reboot","Goku","Trucks","Rodger"]
@@ -52,7 +52,7 @@ Every day you rent the car costs $40. If you rent the car for 7 or more days, yo
 Write a code that gives out the total amount for different days(d).
 
 
-SOLUTION:
+SOLUTION: This was a simple one of just converting python to JavaScript, almost forgot that elif in JS is else if.
 
 function rentalCarCost(d) {
   let cost = 40
@@ -87,7 +87,7 @@ Example (Input --> Output)
 10 --> 10
 
 
-SOLUTION:
+SOLUTION: This one was trickier to convert. in python const batches = ... was eggs // 8. I tried a few different ways and rounding up with Math.ceil() is what gave the expected outcome.
 
 function cookingTime(eggs) {
  
